@@ -23836,6 +23836,9 @@ local.assetsDict['/assets.swgg.html'] = local.assetsDict['/assets.index.default.
 .swggUiContainer .resource > .thead > .td:hover {\n\
     background: #bbf;\n\
 }\n\
+.swggUiContainer .resourceDescription a:hover {\n\
+    color: #7f7;\n\
+}\n\
 \n\
 \n\
 \n\
