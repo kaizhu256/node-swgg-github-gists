@@ -23915,8 +23915,8 @@ document.querySelector(".swggUiContainer > .thead > .td2").value =\n\
 </script>\n\
 <script src="assets.utility2.rollup.js"></script>\n\
 <script>\n\
-window.local = window.swgg;\n\
-window.local.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });\n\
+window.local = window.local || window.swgg;\n\
+window.swgg.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });\n\
 </script>\n\
 </body>\n\
 </html>\n\

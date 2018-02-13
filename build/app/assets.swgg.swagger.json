@@ -109,7 +109,7 @@
     },
     "info": {
         "title": "swgg-github-gists",
-        "version": "2018.2.12",
+        "version": "2018.2.13",
         "x-swgg-description": "this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo",
         "x-swgg-homepage": "https://github.com/kaizhu256/node-swgg-github-gists"
     },
