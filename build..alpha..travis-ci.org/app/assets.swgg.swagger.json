@@ -109,7 +109,7 @@
     },
     "info": {
         "title": "swgg-github-gists",
-        "version": "2018.1.20",
+        "version": "2018.2.12",
         "x-swgg-description": "this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo",
         "x-swgg-homepage": "https://github.com/kaizhu256/node-swgg-github-gists"
     },
@@ -2017,7 +2017,8 @@
                 "",
                 "These are the supported media types for blobs. You can read more about the use of media types in the API [here](https://developer.github.com/v3/media/).",
                 "```",
-                "application/jsonapplication/vnd.github.VERSION.raw",
+                "application/json",
+                "application/vnd.github.VERSION.raw",
                 "```",
                 "",
                 "# [Git Commits](https://developer.github.com/v3/git/commits/)",
@@ -3587,7 +3588,8 @@
                 "",
                 "These are the supported media types for blobs. You can read more about the use of media types in the API [here](https://developer.github.com/v3/media/).",
                 "```",
-                "application/jsonapplication/vnd.github.VERSION.raw",
+                "application/json",
+                "application/vnd.github.VERSION.raw",
                 "```",
                 "",
                 "# [Git Commits](https://developer.github.com/v3/git/commits/)",
