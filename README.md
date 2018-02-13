@@ -57,10 +57,9 @@ this zero-dependency package will provide a swagger-client for github-gists's we
 #### todo
 - none
 
-#### changelog for v2018.1.19
-- npm publish 2018.1.19
-- add github-gists web-apis
-- add github-gists-comments web-apis
+#### changelog for v2018.2.12
+- npm publish v2018.2.12
+- update build
 - none
 
 #### this package requires
@@ -331,16 +330,19 @@ instruction
         "url": "https://github.com/kaizhu256/node-swgg-github-gists.git"
     },
     "scripts": {
+        "apidocRawCreate": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptApidocRawCreate",
+        "apidocRawFetch": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptApidocRawFetch",
         "build-ci": "utility2 shReadmeTest build_ci.sh",
         "env": "env",
         "heroku-postbuild": "npm uninstall utility2 2>/dev/null; npm install kaizhu256/node-utility2#alpha && utility2 shDeployHeroku",
-        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "nameAliasPublish": "",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptPostinstall",
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "PORT=$(utility2 shServerPortRandom) utility2 test test.js"
     },
     "swggAll": "github-all",
     "swggTags0": "github-gists",
-    "version": "2018.1.19"
+    "version": "2018.2.12"
 }
 ```
 
@@ -359,6 +361,7 @@ instruction
 # this shell script will run the build for this package
 
 shBuildCiAfter() {(set -e
+    # shDeployCustom
     shDeployGithub
     # shDeployHeroku
     shReadmeTest example.sh
