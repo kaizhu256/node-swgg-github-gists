@@ -3,7 +3,7 @@
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
 
-<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-02-13T00:11:57.954Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-02-13T00:44:52.349Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
 <tspan x="10" y="58">ode-swgg-github-gists</tspan>
 
 <tspan x="10" y="74"></tspan>
@@ -15,7 +15,7 @@
 
 <tspan x="10" y="138">override assets assets.swgg.swagger.json</tspan>
 
-<tspan x="10" y="154">&gt; server listening on http-port 40403</tspan>
+<tspan x="10" y="154">&gt; server listening on http-port 54469</tspan>
 
 <tspan x="10" y="170">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-gists/package.json</tspan>
 
@@ -56,37 +56,37 @@
 
 <tspan x="10" y="490">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="506">| test-report - buildApidoc - node - linux v6.12.3 - 2018-02-13T00:11:58.183Z</tspan>
+<tspan x="10" y="506">| test-report - buildApidoc - node - linux v6.12.3 - 2018-02-13T00:44:52.577Z</tspan>
 
-<tspan x="10" y="522">|     214 ms            0 failed        1 passed      |</tspan>
+<tspan x="10" y="522">|     217 ms            0 failed        1 passed      |</tspan>
 
 <tspan x="10" y="538">-------------------------------------------------------</tspan>
 
 <tspan x="10" y="554">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
 <tspan x="10" y="570">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-13T\</tspan>
-<tspan x="10" y="586">00:11:40.483Z</tspan>
+<tspan x="10" y="586">00:44:35.031Z</tspan>
 
-<tspan x="10" y="602">|      56 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="602">|      13 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="618">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="634">| test-report - npmTest - node - linux v6.12.3 - 2018-02-13T00:11:38.215Z</tspan>
+<tspan x="10" y="634">| test-report - npmTest - node - linux v6.12.3 - 2018-02-13T00:44:32.623Z</tspan>
 
-<tspan x="10" y="650">|   16597 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="650">|   16727 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="666">-------------------------------------------------------</tspan>
 
 <tspan x="10" y="682">| test-report - npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_6\</tspan>
 <tspan x="10" y="698">4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 20\</tspan>
-<tspan x="10" y="714">18-02-13T00:10:31.835Z</tspan>
+<tspan x="10" y="714">18-02-13T00:43:26.235Z</tspan>
 
 <tspan x="10" y="730">|      11 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="746">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="762">| test-report - npmTestPublished - node - linux v6.12.3 - 2018-02-13T00:10:29.183Z</tspan>
+<tspan x="10" y="762">| test-report - npmTestPublished - node - linux v6.12.3 - 2018-02-13T00:43:23.682Z</tspan>
 
-<tspan x="10" y="778">|   17031 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="778">|   16905 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="794">-------------------------------------------------------</tspan>
 
@@ -105,7 +105,7 @@
 
 <tspan x="10" y="922"></tspan>
 
-<tspan x="10" y="938">[MODE_BUILD=buildApidoc] - 2018-02-13T00:12:00.356Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="938">[MODE_BUILD=buildApidoc] - 2018-02-13T00:44:54.608Z - EXIT_CODE - 0</tspan>
 
 </text>
 </svg>
