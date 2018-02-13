@@ -567,8 +567,8 @@ document.querySelector(".swggUiContainer > .thead > .td2").value =
 </script>
 <script src="assets.utility2.rollup.js"></script>
 <script>
-window.local = window.swgg;
-window.local.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });
+window.local = window.local || window.swgg;
+window.swgg.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });
 </script>
 </body>
 </html>
