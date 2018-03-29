@@ -1,5 +1,5 @@
 # swgg-github-gists
-this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo
+this zero-dependency package will provide a (nodejs-compatible) swagger-client for github-gists's web-apis, with a working web-demo
 
 # live web demo
 - [https://kaizhu256.github.io/node-swgg-github-gists/build..beta..travis-ci.org/app](https://kaizhu256.github.io/node-swgg-github-gists/build..beta..travis-ci.org/app)
@@ -8,7 +8,7 @@ this zero-dependency package will provide a swagger-client for github-gists's we
 
 
 
-[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-github-gists.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-gists) [![coverage](https://kaizhu256.github.io/node-swgg-github-gists/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-gists/build/coverage.html/index.html) [![snyk.io vulnerabilities](https://snyk.io/test/github/kaizhu256/node-swgg-github-gists/badge.svg)](https://snyk.io/test/github/kaizhu256/node-swgg-github-gists)
+[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-github-gists.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-gists) [![coverage](https://kaizhu256.github.io/node-swgg-github-gists/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-gists/build/coverage.html/index.html)
 
 [![NPM](https://nodei.co/npm/swgg-github-gists.png?downloads=true)](https://www.npmjs.com/package/swgg-github-gists)
 
@@ -57,8 +57,8 @@ this zero-dependency package will provide a swagger-client for github-gists's we
 #### todo
 - none
 
-#### changelog for v2018.2.12
-- npm publish v2018.2.12
+#### changelog for v2018.3.28
+- npm publish v2018.3.28
 - update build
 - none
 
@@ -113,10 +113,11 @@ instruction
 
 
 /* istanbul instrument in package swgg_github_gists */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -178,7 +179,7 @@ instruction
         module.exports = local;
         // require builtins
         Object.keys(process.binding('natives')).forEach(function (key) {
-            if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+            if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                 local[key] = require(key);
             }
         });
@@ -199,12 +200,11 @@ instruction
                 );
             }
         });
+/* validateLineSortedReset */
         local.assetsDict['/'] =
             local.assetsDict['/assets.example.html'] =
             local.assetsDict['/assets.index.template.html']
             .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
-                // jslint-hack
-                String(match0);
                 switch (match1) {
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
@@ -287,6 +287,8 @@ instruction
 1. [https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-gists%252Fbuild%252Fapp.png](https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-gists%252Fbuild%252Fapp.png)
 [![screenshot](https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-gists%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-gists%252Fbuild%252Fapp.png)
 
+
+
 1. [https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.npmTest.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.npmTest.browser.%252F.png)
 [![screenshot](https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.npmTest.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-gists/build/screenshot.npmTest.browser.%252F.png)
 
@@ -302,7 +304,7 @@ instruction
 ```json
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo",
+    "description": "this zero-dependency package will provide a (nodejs-compatible) swagger-client for github-gists's web-apis, with a working web-demo",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "utility2": "kaizhu256/node-utility2#alpha"
@@ -319,6 +321,7 @@ instruction
     "license": "MIT",
     "main": "lib.swgg_github_gists.js",
     "name": "swgg-github-gists",
+    "nameAliasPublish": "",
     "nameLib": "swgg_github_gists",
     "nameOriginal": "swgg-github-gists",
     "os": [
@@ -335,14 +338,13 @@ instruction
         "build-ci": "utility2 shReadmeTest build_ci.sh",
         "env": "env",
         "heroku-postbuild": "npm uninstall utility2 2>/dev/null; npm install kaizhu256/node-utility2#alpha && utility2 shDeployHeroku",
-        "nameAliasPublish": "",
         "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptPostinstall",
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "PORT=$(utility2 shServerPortRandom) utility2 test test.js"
     },
     "swggAll": "github-all",
     "swggTags0": "github-gists",
-    "version": "2018.2.12"
+    "version": "2018.3.28"
 }
 ```
 
