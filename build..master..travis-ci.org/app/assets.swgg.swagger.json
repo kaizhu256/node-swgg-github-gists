@@ -1,0 +1,834 @@
+{
+    "basePath": "/",
+    "definitions": {
+        "github-gists.Gists.POST": {
+            "properties": {
+                "description": {
+                    "$ref": "#/parameters/github-gists.description"
+                },
+                "files": {
+                    "default": {
+                        "file1.txt": {
+                            "content": "String file contents"
+                        }
+                    },
+                    "type": "object"
+                },
+                "public": {
+                    "$ref": "#/parameters/github-gists.public"
+                }
+            },
+            "required": [
+                "files"
+            ],
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-gists.GistsGistId.PATCH": {
+            "properties": {
+                "description": {
+                    "$ref": "#/parameters/github-gists.description"
+                },
+                "files": {
+                    "default": {
+                        "description": "the description for this gist",
+                        "files": {
+                            "delete_this_file.txt": null,
+                            "file1.txt": {
+                                "content": "updated file contents"
+                            },
+                            "new_file.txt": {
+                                "content": "a new file"
+                            },
+                            "old_name.txt": {
+                                "content": "modified contents",
+                                "filename": "new_name.txt"
+                            }
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "files"
+            ],
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-gists.GistsGistIdComments.POST": {
+            "properties": {
+                "body": {
+                    "default": "Just commenting for the sake of commenting",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "body"
+            ],
+            "x-swgg-tags0": "github-gists"
+        }
+    },
+    "externalDocs": {
+        "description": "find out more about github-gists's web-apis",
+        "url": "https://developer.github.com/v3/gists/"
+    },
+    "info": {
+        "description": "this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo",
+        "title": "swgg-github-gists",
+        "version": "2018.1.19",
+        "x-swgg-downloadStandaloneApp": "https://kaizhu256.github.io/node-swgg-github-gists/build..beta..travis-ci.org/app/assets.app.js",
+        "x-swgg-homepage": "https://github.com/kaizhu256/node-swgg-github-gists"
+    },
+    "parameters": {
+        "github-activity.org": {
+            "default": "swgg-io",
+            "description": "github org",
+            "in": "path",
+            "name": "org",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.content-length": {
+            "default": 0,
+            "description": "content-length header",
+            "in": "header",
+            "name": "content-length",
+            "required": true,
+            "type": "integer"
+        },
+        "github-all.key": {
+            "default": "xxxxxxxx",
+            "description": "OAuth2 token (sent as a parameter).\n\nhttps://developer.github.com/v3/#authentication",
+            "in": "query",
+            "name": "access_token",
+            "type": "string",
+            "x-swgg-apiKey": true
+        },
+        "github-all.owner": {
+            "default": "swgg-io",
+            "description": "github owner",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.repo": {
+            "default": "node-swgg-google-all",
+            "description": "github repo",
+            "in": "path",
+            "name": "repo",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.user-agent": {
+            "default": "swgg",
+            "description": "user-agent header",
+            "in": "header",
+            "name": "user-agent",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.username": {
+            "default": "swgg-user",
+            "description": "github username",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+        },
+        "github-gists.comment_id": {
+            "default": "359660",
+            "description": "github comment_id",
+            "in": "path",
+            "name": "comment_id",
+            "required": true,
+            "type": "string",
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-gists.description": {
+            "default": "the description for this gist",
+            "description": "A description of the gist.",
+            "in": "query",
+            "name": "description",
+            "type": "string",
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-gists.gist_id": {
+            "default": "2209310",
+            "description": "github gist_id",
+            "in": "path",
+            "name": "gist_id",
+            "required": true,
+            "type": "string",
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-gists.public": {
+            "default": false,
+            "description": "Indicates whether the gist is public. Default: false",
+            "in": "query",
+            "name": "public",
+            "type": "boolean",
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-gists.since": {
+            "description": "A timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.",
+            "format": "date-time",
+            "in": "query",
+            "name": "since",
+            "type": "string",
+            "x-swgg-tags0": "github-gists"
+        },
+        "github-repositories.branch": {
+            "default": "master",
+            "description": "The branch name. Default: the repository’s default branch (usually master).",
+            "in": "query",
+            "name": "branch",
+            "type": "string"
+        },
+        "github-repositories.content": {
+            "description": "The new file content, Base64 encoded.",
+            "format": "byte",
+            "in": "query",
+            "name": "content",
+            "required": true,
+            "type": "string"
+        },
+        "github-repositories.message": {
+            "default": "this is a commit message.",
+            "description": "The commit message.",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "type": "string"
+        },
+        "github-repositories.path": {
+            "default": "README.md",
+            "description": "The content path.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+        },
+        "github-repositories.ref": {
+            "default": "master",
+            "description": "The name of the commit/branch/tag. Default: the repository’s default branch (usually master).",
+            "in": "query",
+            "name": "ref",
+            "type": "string"
+        },
+        "github-repositories.sha": {
+            "default": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "description": "The blob SHA of the file being replaced.",
+            "in": "query",
+            "name": "sha",
+            "required": true,
+            "type": "string"
+        }
+    },
+    "paths": {
+        "/gists": {
+            "get": {
+                "description": "Gists - List a user's gists. List the authenticated user's gists or if called anonymously, this will return all public gists.\n\nhttps://developer.github.com/v3/gists/#list-a-users-gists",
+                "operationId": "_2Fgists_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.since"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "post": {
+                "description": "Gists - Create a gist.\n\nhttps://developer.github.com/v3/gists/#create-a-gist",
+                "operationId": "_2Fgists_20POST",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-gists.Gists.POST"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/public": {
+            "get": {
+                "description": "Gists - List all public gists. List all public gists sorted by most recently updated to least recently updated.\n\nhttps://developer.github.com/v3/gists/#list-all-public-gists",
+                "operationId": "_2Fgists_2Fpublic_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.since"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/starred": {
+            "get": {
+                "description": "Gists - List starred gists. List the authenticated user's starred gists.\n\nhttps://developer.github.com/v3/gists/#list-starred-gists",
+                "operationId": "_2Fgists_2Fstarred_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.since"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}": {
+            "delete": {
+                "description": "Gists - Delete a gist.\n\nhttps://developer.github.com/v3/gists/#delete-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_20DELETE",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "get": {
+                "description": "Gists - Get a single gist.\n\nhttps://developer.github.com/v3/gists/#get-a-single-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "patch": {
+                "description": "Gists - Edit a gist.\n\nhttps://developer.github.com/v3/gists/#edit-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_20PATCH",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-gists.GistsGistId.PATCH"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}/comments": {
+            "get": {
+                "description": "Comments - List comments on a gist.\n\nhttps://developer.github.com/v3/gists/comments/#list-comments-on-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "post": {
+                "description": "Comments - Create a comment.\n\nhttps://developer.github.com/v3/gists/comments/#create-a-comment",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-gists.GistsGistIdComments.POST"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}/comments/{comment_id}": {
+            "delete": {
+                "description": "Comments - Delete a comment.\n\nhttps://developer.github.com/v3/gists/comments/#delete-a-comment",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.comment_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "get": {
+                "description": "Comments - Get a single comment.\n\nhttps://developer.github.com/v3/gists/comments/#get-a-single-comment",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.comment_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "patch": {
+                "description": "Comments - Edit a comment.\n\nhttps://developer.github.com/v3/gists/comments/#edit-a-comment",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.comment_id"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-gists.GistsGistIdComments.POST"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}/commits": {
+            "get": {
+                "description": "Gists - List gist commits.\n\nhttps://developer.github.com/v3/gists/#list-gist-commits",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}/forks": {
+            "get": {
+                "description": "Gists - List gist forks.\n\nhttps://developer.github.com/v3/gists/#list-gist-forks",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fforks_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "post": {
+                "description": "Gists - Fork a gist.\n\nhttps://developer.github.com/v3/gists/#fork-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fforks_20POST",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}/star": {
+            "delete": {
+                "description": "Gists - Unstar a gist.\n\nhttps://developer.github.com/v3/gists/#unstar-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "get": {
+                "description": "Gists - Check if a gist is starred.\n\nhttps://developer.github.com/v3/gists/#check-if-a-gist-is-starred",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fstar_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            },
+            "put": {
+                "description": "Gists - Star a gist. Note that you'll need to set Content-Length to zero when calling out to this endpoint. For more information, see \"HTTP verbs\" (https://developer.github.com/v3/#http-verbs).\n\nhttps://developer.github.com/v3/gists/#star-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.content-length"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/gists/{gist_id}/{sha}": {
+            "get": {
+                "description": "Gists - Get a specific revision of a gist.\n\nhttps://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist",
+                "operationId": "_2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.gist_id"
+                    },
+                    {
+                        "default": "f7a5bda306e55c85726d7d3bd034ff6cec03c8d5",
+                        "description": "github sha revision",
+                        "in": "path",
+                        "name": "sha",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        },
+        "/users/{username}/gists": {
+            "get": {
+                "description": "Gists - List a user's gists. List public gists for the specified user.\n\nhttps://developer.github.com/v3/gists/#list-a-users-gists",
+                "operationId": "_2Fusers_2F_7Busername_7D_2Fgists_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.username"
+                    },
+                    {
+                        "$ref": "#/parameters/github-gists.since"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-gists"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-gists"
+            }
+        }
+    },
+    "schemes": [
+        "https"
+    ],
+    "swagger": "2.0",
+    "tags": [
+        {
+            "description": "find out more about github-gists's.\n\nhttps://developer.github.com/v3/gists/",
+            "name": "github-gists",
+            "x-swgg-tags0": "github-gists"
+        }
+    ],
+    "x-swgg-operationIdFromPath": true,
+    "x-swgg-tags0-override": {
+        "github-activity": {
+            "externalDocs": {
+                "description": "Serving up the 'social' in Social Coding, the Activity APIs provide access to notifications, subscriptions, and timelines",
+                "url": "https://developer.github.com/v3/activity/"
+            }
+        },
+        "github-gists": {
+            "externalDocs": {
+                "description": "find out more about github-gists's web-apis",
+                "url": "https://developer.github.com/v3/gists/"
+            }
+        },
+        "github-repositories": {
+            "externalDocs": {
+                "description": "find out more about github-repositories's web-apis",
+                "url": "https://developer.github.com/v3/repos/"
+            }
+        }
+    }
+}

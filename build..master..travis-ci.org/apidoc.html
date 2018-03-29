@@ -1,0 +1,906 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/kaizhu256/node-swgg-github-gists"
+
+    >swgg-github-gists (v2018.1.19)</a>
+</h1>
+<h4>this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swgg-github-gists">module swgg-github-gists</a><ol>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swgg.apiDict">module swgg.apiDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_20POST.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_20POST.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20DELETE.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_20DELETE.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20PATCH.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_20PATCH.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2Fpublic_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2Fpublic_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2Fstarred_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2Fstarred_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swgg.apiDict.operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax">
+            function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax
+            <span class="apidocSignatureSpan">(options, onError)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swgg-github-gists" id="apidoc.module.swgg-github-gists">module swgg-github-gists</a></h1>
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swgg.apiDict" id="apidoc.module.swgg.apiDict">module swgg.apiDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;since&#x22;: &#x22;2018-01-20T06:31:04.843Z&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_20POST.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_20POST.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_20POST.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_20POST.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;POST /gists&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_20POST&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;body&#x22;: {
+            &#x22;description&#x22;: &#x22;the description for this gist&#x22;,
+            &#x22;files&#x22;: {
+                &#x22;file1.txt&#x22;: {
+                    &#x22;content&#x22;: &#x22;String file contents&#x22;
+                }
+            },
+            &#x22;public&#x22;: false
+        }
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20DELETE.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20DELETE.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_20DELETE.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_20DELETE.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;DELETE /gists/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_20DELETE&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20PATCH.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_20PATCH.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_20PATCH.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_20PATCH.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;PATCH /gists/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_20PATCH&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;body&#x22;: {
+            &#x22;description&#x22;: &#x22;the description for this gist&#x22;,
+            &#x22;files&#x22;: {
+                &#x22;description&#x22;: &#x22;the description for this gist&#x22;,
+                &#x22;files&#x22;: {
+                    &#x22;delete_this_file.txt&#x22;: null,
+                    &#x22;file1.txt&#x22;: {
+                        &#x22;content&#x22;: &#x22;updated file contents&#x22;
+                    },
+                    &#x22;new_file.txt&#x22;: {
+                        &#x22;content&#x22;: &#x22;a new file&#x22;
+                    },
+                    &#x22;old_name.txt&#x22;: {
+                        &#x22;content&#x22;: &#x22;modified contents&#x22;,
+                        &#x22;filename&#x22;: &#x22;new_name.txt&#x22;
+                    }
+                }
+            }
+        }
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2F_7Bsha_7D_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;sha&#x22;: &#x22;f7a5bda306e55c85726d7d3bd034ff6cec03c8d5&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}/comments&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;POST /gists/{}/comments&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;body&#x22;: {
+            &#x22;body&#x22;: &#x22;Just commenting for the sake of commenting&#x22;
+        }
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;DELETE /gists/{}/comments/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20DELETE&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;comment_id&#x22;: &#x22;359660&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}/comments/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;comment_id&#x22;: &#x22;359660&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;PATCH /gists/{}/comments/{}&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bcomment_id_7D_20PATCH&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;comment_id&#x22;: &#x22;359660&#x22;,
+        &#x22;body&#x22;: {
+            &#x22;body&#x22;: &#x22;Just commenting for the sake of commenting&#x22;
+        }
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}/commits&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcommits_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}/forks&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;POST /gists/{}/forks&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fforks_20POST&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;DELETE /gists/{}/star&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20DELETE&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/{}/star&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;PUT /gists/{}/star&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fstar_20PUT&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;gist_id&#x22;: &#x22;2209310&#x22;,
+        &#x22;content-length&#x22;: 0
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2Fpublic_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2Fpublic_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2Fpublic_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2Fpublic_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/public&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2Fpublic_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;since&#x22;: &#x22;2018-01-20T06:31:04.849Z&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fgists_2Fstarred_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fgists_2Fstarred_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fgists_2Fstarred_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2Fstarred_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /gists/starred&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fgists_2Fstarred_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;since&#x22;: &#x22;2018-01-20T06:31:04.850Z&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swgg.apiDict.operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax" id="apidoc.element.swgg.apiDict.operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax">
+        function <span class="apidocSignatureSpan">swgg.apiDict.</span>operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax
+        <span class="apidocSignatureSpan">(options, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax = function (options, onError) {
+<span class="apidocCodeCommentSpan">/*
+ * this function will make the api-call &#x22;GET /users/{}/gists&#x22;
+ * example usage:
+    swgg.apiDict[&#x22;operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET&#x22;].ajax({
+        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
+        &#x22;user-agent&#x22;: &#x22;swgg&#x22;,
+        &#x22;username&#x22;: &#x22;swgg-user&#x22;,
+        &#x22;since&#x22;: &#x22;2018-01-20T06:31:04.861Z&#x22;
+    }, function (error, data) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(data.responseJson || data.responseText);
+    });
+ */
+</span>    return local.apiAjax(self, options, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
