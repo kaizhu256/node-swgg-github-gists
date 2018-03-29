@@ -52,9 +52,9 @@
 
         href="https://github.com/kaizhu256/node-swgg-github-gists"
 
-    >swgg-github-gists (v2018.2.12)</a>
+    >swgg-github-gists (v2018.3.28)</a>
 </h1>
-<h4>this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo</h4>
+<h4>this zero-dependency package will provide a (nodejs-compatible) swagger-client for github-gists's web-apis, with a working web-demo</h4>
 <div class="apidocSectionDiv"><a
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
@@ -259,22 +259,22 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_20POST.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;POST /gists&#x22;
+ * this function will run the api-call &quot;POST /gists&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_20POST&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_20POST&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;body&#x22;: {
-            &#x22;description&#x22;: &#x22;the description for this gist&#x22;,
-            &#x22;files&#x22;: {
-                &#x22;file1.txt&#x22;: {
-                    &#x22;content&#x22;: &#x22;String file contents&#x22;
+        &quot;body&quot;: {
+            &quot;description&quot;: &quot;the description for this gist&quot;,
+            &quot;files&quot;: {
+                &quot;file1.txt&quot;: {
+                    &quot;content&quot;: &quot;String file contents&quot;
                 }
             },
-            &#x22;public&#x22;: false
+            &quot;public&quot;: false
         }
     }, function (error, data) {
         if (error) {
@@ -300,15 +300,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}/comments&#x22;
+ * this function will run the api-call &quot;GET /gists/{}/comments&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.v3.raw+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.v3.raw+json&quot;
         ],
-        &#x22;gist_id&#x22;: &#x22;gist_id&#x22;
+        &quot;gist_id&quot;: &quot;gist_id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -333,17 +333,17 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;POST /gists/{}/comments&#x22;
+ * this function will run the api-call &quot;POST /gists/{}/comments&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.v3.raw+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.v3.raw+json&quot;
         ],
-        &#x22;gist_id&#x22;: &#x22;gist_id&#x22;,
-        &#x22;body&#x22;: {
-            &#x22;body&#x22;: &#x22;Just commenting for the sake of commenting&#x22;
+        &quot;gist_id&quot;: &quot;gist_id&quot;,
+        &quot;body&quot;: {
+            &quot;body&quot;: &quot;Just commenting for the sake of commenting&quot;
         }
     }, function (error, data) {
         if (error) {
@@ -369,16 +369,16 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20DELETE.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;DELETE /gists/{}/comments/{}&#x22;
+ * this function will run the api-call &quot;DELETE /gists/{}/comments/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20DELETE&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.v3.raw+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20DELETE&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.v3.raw+json&quot;
         ],
-        &#x22;gist_id&#x22;: &#x22;gist_id&#x22;,
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;gist_id&quot;: &quot;gist_id&quot;,
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -403,16 +403,16 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}/comments/{}&#x22;
+ * this function will run the api-call &quot;GET /gists/{}/comments/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.v3.raw+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.v3.raw+json&quot;
         ],
-        &#x22;gist_id&#x22;: &#x22;gist_id&#x22;,
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;gist_id&quot;: &quot;gist_id&quot;,
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -437,18 +437,18 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20PATCH.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;PATCH /gists/{}/comments/{}&#x22;
+ * this function will run the api-call &quot;PATCH /gists/{}/comments/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20PATCH&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.v3.raw+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20PATCH&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.v3.raw+json&quot;
         ],
-        &#x22;gist_id&#x22;: &#x22;gist_id&#x22;,
-        &#x22;id&#x22;: &#x22;id&#x22;,
-        &#x22;body&#x22;: {
-            &#x22;body&#x22;: &#x22;Just commenting for the sake of commenting&#x22;
+        &quot;gist_id&quot;: &quot;gist_id&quot;,
+        &quot;id&quot;: &quot;id&quot;,
+        &quot;body&quot;: {
+            &quot;body&quot;: &quot;Just commenting for the sake of commenting&quot;
         }
     }, function (error, data) {
         if (error) {
@@ -474,15 +474,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_20DELETE.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;DELETE /gists/{}&#x22;
+ * this function will run the api-call &quot;DELETE /gists/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_20DELETE&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_20DELETE&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -507,15 +507,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}&#x22;
+ * this function will run the api-call &quot;GET /gists/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -540,28 +540,30 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_20PATCH.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;PATCH /gists/{}&#x22;
+ * this function will run the api-call &quot;PATCH /gists/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_20PATCH&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_20PATCH&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;,
-        &#x22;body&#x22;: {
-            &#x22;description&#x22;: &#x22;the description for this gist&#x22;,
-            &#x22;files&#x22;: {
-                &#x22;delete_this_file.txt&#x22;: &#x22;abcd1234&#x22;,
-                &#x22;file1.txt&#x22;: {
-                    &#x22;content&#x22;: &#x22;updated file contents&#x22;
+        &quot;id&quot;: &quot;id&quot;,
+        &quot;body&quot;: {
+            &quot;content&quot;: &quot;abcd1234&quot;,
+            &quot;description&quot;: &quot;the description for this gist&quot;,
+            &quot;filename&quot;: &quot;abcd1234&quot;,
+            &quot;files&quot;: {
+                &quot;delete_this_file.txt&quot;: &quot;abcd1234&quot;,
+                &quot;file1.txt&quot;: {
+                    &quot;content&quot;: &quot;updated file contents&quot;
                 },
-                &#x22;new_file.txt&#x22;: {
-                    &#x22;content&#x22;: &#x22;a new file&#x22;
+                &quot;new_file.txt&quot;: {
+                    &quot;content&quot;: &quot;a new file&quot;
                 },
-                &#x22;old_name.txt&#x22;: {
-                    &#x22;content&#x22;: &#x22;modified contents&#x22;,
-                    &#x22;filename&#x22;: &#x22;new_name.txt&#x22;
+                &quot;old_name.txt&quot;: {
+                    &quot;content&quot;: &quot;modified contents&quot;,
+                    &quot;filename&quot;: &quot;new_name.txt&quot;
                 }
             }
         }
@@ -589,16 +591,16 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2F_7Bsha_7D_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}/{}&#x22;
+ * this function will run the api-call &quot;GET /gists/{}/{}&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2F_7Bsha_7D_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2F_7Bsha_7D_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;,
-        &#x22;sha&#x22;: &#x22;sha&#x22;
+        &quot;id&quot;: &quot;id&quot;,
+        &quot;sha&quot;: &quot;sha&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -623,15 +625,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2Fcommits_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}/commits&#x22;
+ * this function will run the api-call &quot;GET /gists/{}/commits&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2Fcommits_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2Fcommits_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -656,15 +658,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2Fforks_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}/forks&#x22;
+ * this function will run the api-call &quot;GET /gists/{}/forks&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2Fforks_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2Fforks_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -689,15 +691,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2Fforks_20POST.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;POST /gists/{}/forks&#x22;
+ * this function will run the api-call &quot;POST /gists/{}/forks&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2Fforks_20POST&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2Fforks_20POST&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -722,15 +724,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2Fstar_20DELETE.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;DELETE /gists/{}/star&#x22;
+ * this function will run the api-call &quot;DELETE /gists/{}/star&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2Fstar_20DELETE&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2Fstar_20DELETE&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -755,15 +757,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2Fstar_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/{}/star&#x22;
+ * this function will run the api-call &quot;GET /gists/{}/star&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2Fstar_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2Fstar_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -788,15 +790,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2F_7Bid_7D_2Fstar_20PUT.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;PUT /gists/{}/star&#x22;
+ * this function will run the api-call &quot;PUT /gists/{}/star&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2F_7Bid_7D_2Fstar_20PUT&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2F_7Bid_7D_2Fstar_20PUT&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;id&#x22;: &#x22;id&#x22;
+        &quot;id&quot;: &quot;id&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -821,15 +823,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2Fpublic_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/public&#x22;
+ * this function will run the api-call &quot;GET /gists/public&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2Fpublic_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2Fpublic_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;since&#x22;: &#x22;abcd1234&#x22;
+        &quot;since&quot;: &quot;abcd1234&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -854,15 +856,15 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fgists_2Fstarred_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /gists/starred&#x22;
+ * this function will run the api-call &quot;GET /gists/starred&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fgists_2Fstarred_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fgists_2Fstarred_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;since&#x22;: &#x22;abcd1234&#x22;
+        &quot;since&quot;: &quot;abcd1234&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);
@@ -887,16 +889,16 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET.ajax = function (swaggerJson, onError) {
 <span class="apidocCodeCommentSpan">/*
- * this function will run the api-call &#x22;GET /users/{}/gists&#x22;
+ * this function will run the api-call &quot;GET /users/{}/gists&quot;
  * example usage:
-    swgg.apiDict[&#x22;operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET&#x22;].ajax({
-        &#x22;access_token&#x22;: &#x22;xxxxxxxx&#x22;,
-        &#x22;user-agent&#x22;: &#x22;Awesome-Octocat-App&#x22;,
-        &#x22;accept&#x22;: [
-            &#x22;application/vnd.github.jean-grey-preview+json&#x22;
+    swgg.apiDict[&quot;operationId._2Fusers_2F_7Busername_7D_2Fgists_20GET&quot;].ajax({
+        &quot;access_token&quot;: &quot;xxxxxxxx&quot;,
+        &quot;user-agent&quot;: &quot;Awesome-Octocat-App&quot;,
+        &quot;accept&quot;: [
+            &quot;application/vnd.github.jean-grey-preview+json&quot;
         ],
-        &#x22;username&#x22;: &#x22;username&#x22;,
-        &#x22;since&#x22;: &#x22;abcd1234&#x22;
+        &quot;username&quot;: &quot;username&quot;,
+        &quot;since&quot;: &quot;abcd1234&quot;
     }, function (error, data) {
         if (error) {
             console.error(error);

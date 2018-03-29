@@ -1,7 +1,7 @@
 <html lang="en" data-scrape="{
     &quot;hrefDict&quot;: {
         &quot;https://github.com/kaizhu256/node-swgg&quot;: &quot;swgg&quot;,
-        &quot;https://github.com/kaizhu256/node-swgg-github-gists&quot;: &quot;swgg-github-gists (2018.2.12)&quot;,
+        &quot;https://github.com/kaizhu256/node-swgg-github-gists&quot;: &quot;swgg-github-gists (2018.3.28)&quot;,
         &quot;https://developer.github.com/v3/gists/&quot;: &quot;Gists&quot;,
         &quot;https://developer.github.com/v3/&quot;: &quot;GraphQL node_id&quot;,
         &quot;https://developer.github.com/changes/2017-12-19-graphql-node-id&quot;: &quot;blog post&quot;,
@@ -12,47 +12,23 @@
     },
     &quot;href&quot;: &quot;http://127.0.0.1:8081/#!swgg_id__2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST_1&quot;,
     &quot;url&quot;: &quot;http://127.0.0.1:8081/&quot;,
-    &quot;bodyTextContent&quot;: &quot;javascript code\n/*\n * initialize swgg-client\n * 1. download currently-loaded apis to file swagger.json:\n *     $ curl -L \&quot;http://127.0.0.1:8081/assets.swgg.swagger.json\&quot; > swagger.json\n * 2. npm install swgg\n *     $ npm install swgg\n * 3. run code below to initialize swgg-client\n * 4. (optional) edit file swagger.json to suit your needs\n */\nvar swgg;\nswgg = require(\&quot;swgg\&quot;);\nswgg.apiUpdate(require(\&quot;./swagger.json\&quot;));\nconsole.log(\&quot;printing currently loaded apis ...\&quot;);\nconsole.log(JSON.stringify(Object.keys(swgg.apiDict).sort(), null, 4));\nconsole.log(\&quot;initialized swgg-client\&quot;);\n\n            **Note:** To help with migrating from our REST API v3 to GraphQL API v4, we're introducing a preview period to include the [GraphQL ```node_id```]() in the response for many REST API v3 resources. See the [blog post]() for full details. To access ```node_id``` during the preview period, you must provide a custom [media type]() in the ```Accept``` header:\n```\napplication/vnd.github.jean-grey-preview+json\n```\n\nThese are the supported media types for gist comments. You can read more about the use of media types in the API [here]().\n```\napplication/vnd.github.VERSION.raw+json\napplication/vnd.github.VERSION.text+json\napplication/vnd.github.VERSION.html+json\napplication/vnd.github.VERSION.full+json\n```\n\n        Gists\nNote: To help with migrating from our REST API v3 to GraphQL API v4, we're introducing a preview period to include the GraphQL node_id in the response for many REST API v3 resources. See the blog post for full details. To access node_id during the preview period, you must provide a custom media type in the Accept header:\napplication/vnd.github.jean-grey-preview+json\nWarning: The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact GitHub support.\nCustom media types\nThe following media types are supported when fetching gist contents. You can read more about the use of media types in the API here.\napplication/vnd.github.VERSION.raw\napplication/vnd.github.VERSION.base64\nGist Comments\nGist Comments use these custom media types. You can read more about the use of media types in the API here.\nCustom media types\nThese are the supported media types for gist comments. You can read more about the use of media types in the API here.\napplication/vnd.github.VERSION.raw+json\napplication/vnd.github.VERSION.text+json\napplication/vnd.github.VERSION.html+json\napplication/vnd.github.VERSION.full+json\n\n                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                    try it out!\n    javascript code\n    /*\n * reproduce api-call \&quot;POST /gists/{}/comments\&quot;\n * 1. initialize swgg-client from previous step\n * 2. run code below to reproduce api-call\n */\nswgg.apiDict[\&quot;POST /gists/{}/comments\&quot;].ajax({\n    \&quot;paramDict\&quot;: {\n        \&quot;user-agent\&quot;: \&quot;Awesome-Octocat-App\&quot;,\n        \&quot;gist_id\&quot;: \&quot;gist_id\&quot;,\n        \&quot;body\&quot;: {\n            \&quot;body\&quot;: \&quot;Just commenting for the sake of commenting\&quot;\n        }\n    }\n}, function (error, data) {\n    if (error) {\n        console.error(error);\n        return;\n    }\n    console.log(data.responseJson || data.responseText);\n});\n\n    curl request\n    curl \\\n--request POST \\\n--header 'user-agent: Awesome-Octocat-App' \\\n--header 'Content-Type: application/json' \\\n--data-binary '{\n    \&quot;body\&quot;: \&quot;Just commenting for the sake of commenting\&quot;\n}' \\\n\&quot;https://api.github.com/gists/gist_id/comments\&quot;\n    response status code\n\n                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                                    https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                            {\n    \&quot;description\&quot;: {\n        \&quot;default\&quot;: \&quot;the description for this gist\&quot;,\n        \&quot;description\&quot;: \&quot;A description of the gist.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;A description of the gist.\&quot;\n        ]\n    },\n    \&quot;files\&quot;: {\n        \&quot;properties\&quot;: {\n            \&quot;file1.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;String file contents\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            }\n        },\n        \&quot;x-swgg-tags0\&quot;: \&quot;github-gists\&quot;\n    },\n    \&quot;public\&quot;: {\n        \&quot;default\&quot;: false,\n        \&quot;description\&quot;: \&quot;Indicates whether the gist is public. Default: ```false```\&quot;,\n        \&quot;type\&quot;: \&quot;boolean\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;Indicates whether the gist is public. Default: ```false```\&quot;\n        ]\n    }\n}\n\n                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                {\n    \&quot;description\&quot;: \&quot;the description for this gist\&quot;,\n    \&quot;files\&quot;: {\n        \&quot;delete_this_file.txt\&quot;: \&quot;abcd1234\&quot;,\n        \&quot;file1.txt\&quot;: {\n            \&quot;content\&quot;: \&quot;updated file contents\&quot;\n        },\n        \&quot;new_file.txt\&quot;: {\n            \&quot;content\&quot;: \&quot;a new file\&quot;\n        },\n        \&quot;old_name.txt\&quot;: {\n            \&quot;content\&quot;: \&quot;modified contents\&quot;,\n            \&quot;filename\&quot;: \&quot;new_name.txt\&quot;\n        }\n    }\n}\n\n    {\n    \&quot;description\&quot;: {\n        \&quot;default\&quot;: \&quot;the description for this gist\&quot;,\n        \&quot;description\&quot;: \&quot;A description of the gist.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;A description of the gist.\&quot;\n        ]\n    },\n    \&quot;files\&quot;: {\n        \&quot;properties\&quot;: {\n            \&quot;delete_this_file.txt\&quot;: {\n                \&quot;default\&quot;: null,\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;string\&quot;\n            },\n            \&quot;file1.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;updated file contents\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            },\n            \&quot;new_file.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;a new file\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            },\n            \&quot;old_name.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;modified contents\&quot;,\n                    \&quot;filename\&quot;: \&quot;new_name.txt\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            }\n        },\n        \&quot;x-swgg-tags0\&quot;: \&quot;github-gists\&quot;\n    }\n}\n\n                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                            Gists - List all public gists\nList all public gists sorted by most recently updated to least recently updated.\nNote: With pagination, you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.\n\n                            https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.&quot;
+    &quot;bodyTextContent&quot;: &quot;nodejs initialization\n/*\n * initialize nodejs swgg-client\n * 1. download currently-loaded apis to file swagger.json:\n *     $ curl -L -o swagger.json \&quot;http://127.0.0.1:8081/assets.swgg.swagger.json\&quot;\n * 2. npm install swgg\n *     $ npm install swgg\n * 3. run code below to initialize nodejs swgg-client\n * 4. (optional) edit file swagger.json to suit your needs\n */\nvar swgg;\nswgg = require(\&quot;swgg\&quot;);\nswgg.apiUpdate(require(\&quot;./swagger.json\&quot;));\nconsole.log(\&quot;printing currently loaded apis ...\&quot;);\nObject.keys(swgg.apiDict).sort().forEach(function (key) {\n    console.log(\&quot;swgg.apiDict[\&quot; + JSON.stringify(key) + \&quot;].ajax\&quot;);\n});\nconsole.log(\&quot;initialized nodejs swgg-client\&quot;);\n\n            **Note:** To help with migrating from our REST API v3 to GraphQL API v4, we're introducing a preview period to include the [GraphQL ```node_id```]() in the response for many REST API v3 resources. See the [blog post]() for full details. To access ```node_id``` during the preview period, you must provide a custom [media type]() in the ```Accept``` header:\n```\napplication/vnd.github.jean-grey-preview+json\n```\n\nThese are the supported media types for gist comments. You can read more about the use of media types in the API [here]().\n```\napplication/vnd.github.VERSION.raw+json\napplication/vnd.github.VERSION.text+json\napplication/vnd.github.VERSION.html+json\napplication/vnd.github.VERSION.full+json\n```\n\n        Gists\nNote: To help with migrating from our REST API v3 to GraphQL API v4, we're introducing a preview period to include the GraphQL node_id in the response for many REST API v3 resources. See the blog post for full details. To access node_id during the preview period, you must provide a custom media type in the Accept header:\napplication/vnd.github.jean-grey-preview+json\nWarning: The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact GitHub support.\nCustom media types\nThe following media types are supported when fetching gist contents. You can read more about the use of media types in the API here.\napplication/vnd.github.VERSION.raw\napplication/vnd.github.VERSION.base64\nGist Comments\nGist Comments use these custom media types. You can read more about the use of media types in the API here.\nCustom media types\nThese are the supported media types for gist comments. You can read more about the use of media types in the API here.\napplication/vnd.github.VERSION.raw+json\napplication/vnd.github.VERSION.text+json\napplication/vnd.github.VERSION.html+json\napplication/vnd.github.VERSION.full+json\n\n                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                    try it out!\n    nodejs request\n    /*\n * reproduce api-call \&quot;POST /gists/{}/comments\&quot;\n * 1. initialize nodejs swgg-client from previous step\n * 2. run code below to reproduce api-call\n */\nswgg.apiDict[\&quot;POST /gists/{}/comments\&quot;].ajax({\n    \&quot;paramDict\&quot;: {\n        \&quot;user-agent\&quot;: \&quot;Awesome-Octocat-App\&quot;,\n        \&quot;gist_id\&quot;: \&quot;gist_id\&quot;,\n        \&quot;body\&quot;: {\n            \&quot;body\&quot;: \&quot;Just commenting for the sake of commenting\&quot;\n        }\n    }\n}, function (error, data) {\n    if (error) {\n        console.error(error);\n        return;\n    }\n    console.log(data.responseJson || data.responseText);\n});\n\n    curl request\n    curl \\\n--request POST \\\n--header 'user-agent: Awesome-Octocat-App' \\\n--header 'Content-Type: application/json' \\\n--data-binary '{\n    \&quot;body\&quot;: \&quot;Just commenting for the sake of commenting\&quot;\n}' \\\n\&quot;https://api.github.com/gists/gist_id/comments\&quot;\n    response status code\n\n                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                                                    https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                    {\n    \&quot;description\&quot;: {\n        \&quot;default\&quot;: \&quot;the description for this gist\&quot;,\n        \&quot;description\&quot;: \&quot;A description of the gist.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;A description of the gist.\&quot;\n        ]\n    },\n    \&quot;files\&quot;: {\n        \&quot;properties\&quot;: {\n            \&quot;file1.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;String file contents\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            }\n        },\n        \&quot;x-swgg-tags0\&quot;: \&quot;github-gists\&quot;\n    },\n    \&quot;public\&quot;: {\n        \&quot;default\&quot;: false,\n        \&quot;description\&quot;: \&quot;Indicates whether the gist is public. Default: ```false```\&quot;,\n        \&quot;type\&quot;: \&quot;boolean\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;Indicates whether the gist is public. Default: ```false```\&quot;\n        ]\n    }\n}\n\n                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                        {\n    \&quot;content\&quot;: \&quot;abcd1234\&quot;,\n    \&quot;description\&quot;: \&quot;the description for this gist\&quot;,\n    \&quot;filename\&quot;: \&quot;abcd1234\&quot;,\n    \&quot;files\&quot;: {\n        \&quot;delete_this_file.txt\&quot;: \&quot;abcd1234\&quot;,\n        \&quot;file1.txt\&quot;: {\n            \&quot;content\&quot;: \&quot;updated file contents\&quot;\n        },\n        \&quot;new_file.txt\&quot;: {\n            \&quot;content\&quot;: \&quot;a new file\&quot;\n        },\n        \&quot;old_name.txt\&quot;: {\n            \&quot;content\&quot;: \&quot;modified contents\&quot;,\n            \&quot;filename\&quot;: \&quot;new_name.txt\&quot;\n        }\n    }\n}\n\n    {\n    \&quot;content\&quot;: {\n        \&quot;description\&quot;: \&quot;Updated file contents.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;Updated file contents.\&quot;\n        ]\n    },\n    \&quot;description\&quot;: {\n        \&quot;default\&quot;: \&quot;the description for this gist\&quot;,\n        \&quot;description\&quot;: \&quot;A description of the gist.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;A description of the gist.\&quot;\n        ]\n    },\n    \&quot;filename\&quot;: {\n        \&quot;description\&quot;: \&quot;New name for this file.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;New name for this file.\&quot;\n        ]\n    },\n    \&quot;files\&quot;: {\n        \&quot;properties\&quot;: {\n            \&quot;delete_this_file.txt\&quot;: {\n                \&quot;default\&quot;: null,\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;string\&quot;\n            },\n            \&quot;file1.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;updated file contents\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            },\n            \&quot;new_file.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;a new file\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            },\n            \&quot;old_name.txt\&quot;: {\n                \&quot;default\&quot;: {\n                    \&quot;content\&quot;: \&quot;modified contents\&quot;,\n                    \&quot;filename\&quot;: \&quot;new_name.txt\&quot;\n                },\n                \&quot;description\&quot;: \&quot;no description\&quot;,\n                \&quot;type\&quot;: \&quot;object\&quot;\n            }\n        },\n        \&quot;x-swgg-tags0\&quot;: \&quot;github-gists\&quot;\n    }\n}\n\n                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                    Gists - List all public gists\nList all public gists sorted by most recently updated to least recently updated.\nNote: With pagination, you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.\n\n                            https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.&quot;
 }"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- "" -->
-<title>swgg-github-gists (2018.2.12)</title>
+<title>swgg-github-gists (2018.3.28)</title>
 <style>
+/* jslint-utility2 */
 /*csslint
-    box-sizing: false,
-    universal-selector: false
 */
+/* jslint-ignore-begin */
 *,
 *:after,
 *:before {
     box-sizing: border-box;
 }
-body {
-    background: #dde;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 40px;
-}
-body > a,
-body > button,
-body > div,
-body > input,
-body > pre,
-body > select,
-body > span,
-body > textarea {
-    margin-bottom: 20px;
-}
-body > button {
-    width: 20rem;
-}
-button {
-    cursor: pointer;
-}
-pre {
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-}
+/* jslint-ignore-end */
 @keyframes uiAnimateShake {
     0%, 50% {
         transform: translateX(10px);
@@ -64,6 +40,67 @@ pre {
         transform: translateX(0);
     }
 }
+@keyframes uiAnimateSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+a {
+    overflow-wrap: break-word;
+}
+body > div,
+body > pre,
+body > textarea,
+body > .button {
+    margin-bottom: 20px;
+}
+body > textarea {
+    height: 10rem;
+    width: 100%;
+}
+body > textarea[readonly] {
+    background: #ddd;
+}
+body > .button {
+    width: 20rem;
+}
+code,
+pre,
+textarea {
+    font-family: Consolas, Menlo, monospace;
+    font-size: small;
+}
+pre {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+textarea {
+    overflow: auto;
+    white-space: pre;
+}
+.button {
+    background-color: #fff;
+    border: 1px solid;
+    border-bottom-color: rgb(186, 186, 186);
+    border-left-color: rgb(209, 209, 209);
+    border-radius: 4px;
+    border-right-color: rgb(209, 209, 209);
+    border-top-color: rgb(216, 216, 216);
+    color: #00d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 2px 7px 3px 7px;
+    text-align: center;
+    text-decoration: underline;
+}
 .uiAnimateShake {
     animation-duration: 500ms;
     animation-name: uiAnimateShake;
@@ -71,10 +108,6 @@ pre {
 .uiAnimateSlide {
     overflow-y: hidden;
     transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;
-}
-@keyframes uiAnimateSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 .utility2FooterDiv {
     text-align: center;
@@ -88,6 +121,7 @@ pre {
 }
 </style>
 <style>
+/* jslint-utility2 */
 /*csslint
 */
 /* jslint-ignore-begin */
@@ -96,7 +130,6 @@ pre {
     border: 0;
     border-radius: 0;
     margin: 0;
-    margin-bottom: 10px;
     max-width: 100%;
     padding: 0;
 }
@@ -105,44 +138,44 @@ pre {
 .swggUiContainer .resource > .thead > .td:focus {
     outline: none;
 }
+.swggUiContainer .description > * {
+    margin-top: 20px;
+}
+.swggUiContainer .description > *:first-child {
+    margin-top: 0;
+}
 /* jslint-ignore-end */
-
-
-
+/* validateLineSortedReset */
 /* general */
-.swggUiContainer {
-    max-width: 1200px;
-}
-.swggUiContainer button,
-.swggUiContainer .operation > .thead,
-.swggUiContainer .resource > .thead {
-    cursor: pointer;
-}
-.swggUiContainer button {
-    font-size: medium;
+.swggUiContainer code,
+.swggUiContainer pre,
+.swggUiContainer textarea {
+    line-height: 1.25rem;
+    max-height: 50rem;
+    overflow: auto;
 }
 .swggUiContainer input,
 .swggUiContainer pre,
 .swggUiContainer textarea {
     min-height: 1.5rem;
 }
-.swggUiContainer pre,
-.swggUiContainer textarea {
-    font-family: Menlo, Monaco, Consolas, Courier New, monospace;
-    font-size: small;
-    line-height: 1.25rem;
-    max-height: 50rem;
-    overflow: auto;
-    white-space: nowrap;
-}
 .swggUiContainer pre {
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
+    white-space: pre;
+}
+.swggUiContainer .button,
+.swggUiContainer .operation > .thead,
+.swggUiContainer .resource > .thead {
+    cursor: pointer;
+}
+.swggUiContainer .button,
+.swggUiContainer .operation > .thead > .td3,
+.swggUiContainer .resource > .thead > .td {
+    font-weight: bold;
+    text-decoration: underline;
 }
 .swggUiContainer .markdown pre {
     max-height: none;
 }
-
 .swggUiContainer .multilinePlaceholderContainer {
     min-height: 10rem;
     position: relative;
@@ -162,12 +195,6 @@ pre {
     text-align: center;
     width: 5rem;
 }
-.swggUiContainer .resourceIi {
-    min-width: 3rem;
-}
-.swggUiContainer .resourceSummary {
-    font-weight: lighter;
-}
 .swggUiContainer .responseBody,
 .swggUiContainer .responseHeaders,
 .swggUiContainer .responseStatusCode {
@@ -184,7 +211,7 @@ pre {
 }
 .swggUiContainer .td {
     overflow: auto;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 .swggUiContainer .td input,
 .swggUiContainer .td pre,
@@ -192,22 +219,17 @@ pre {
 .swggUiContainer .td textarea {
     width: 100%;
 }
-.swggUiContainer > .thead > .td1 {
-    font-size: x-large;
-    text-decoration: none;
-}
-
-
-
-/* important style */
+/* validateLineSortedReset */
 /* background */
-.swggUiContainer button,
-.swggUiContainer .resourceDescription {
-    background: #373;
-}
-.swggUiContainer pre,
-.swggUiContainer .operationDescription {
+.swggUiContainer code,
+.swggUiContainer pre {
     background: #ddd;
+}
+.swggUiContainer .button {
+    background: #ddf;
+}
+.swggUiContainer .description {
+    background: #bdb;
 }
 .swggUiContainer .methodDELETE {
     background: #b07;
@@ -236,15 +258,14 @@ pre {
 .swggUiContainer .operation {
     background: #dfd;
 }
-.swggUiContainer .resourceDescription pre {
-    background: #777;
-}
+.swggUiContainer .resource > .thead,
 .swggUiContainer > .thead {
-    background: #7b5;
+    background: #7b7;
 }
 .swggUiContainer > .thead > .td1 {
     background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqRJREFUeNrEVz1s00AUfnGXii5maMXoEUEHVwIpEkPNgkBdMnQoU5ytiKHJwpp2Q2JIO8DCUDOxIJFIVOoWZyJSh3pp1Q2PVVlcCVBH3ufeVZZ9Zye1Ay86nXV+ue/9fO/lheg/Se02X1rvksmbnTiKvuxQMBNgBnN4a/LCbmnUAP6JV58NCUsBC8CuAJxGPF47OgNqBaA93tolUhnx6jC4NxGwyOEwlccyAs+3kwdzKq0HDn2vEBTi8J2XpyMaywNDE157BhXUE3zJhlq8GKq+Zd2zaWHepPA8oN9XkfLmRdOiJV4XUUg/IyWncLjCYY/SHndV2u7zHr3bPKZtdxgboJOnthvrfGj/oMf3G0r7JVmNlLfKklmrt2MvvcNO7LFOhoFHfuAJI5o6ta10jpt5CQLgwXhXG2YIwvu+34qf78ybOjWTnWwkgR36d7JqJOrW0hHmNrKg9xhiS4+1jFmrxymh03B0w+6kURIAu3yHtOD5oaUNojMnGgbcctNvwdAnyxvxRR+/vaJnjzbpzcZX+nN1SdGv85i9eH8w3qPO+mdm/y4dnQ1iI8Fq6Nf4cxL6GWSjiFDSs0VRnxC5g0xSB2cgHpaseTxfqOv5uoHkNQ6Ha/N1Yz9mNMppEkEkYKj79q6uCq4bCHcSX3fJ0Vk/k9siASjCm1N6gZH6Ec9IXt2WkFES2K/ixoIyktJPAu/ptOA1SgO5zqtr6KASJPF0nMV8dgMsRhRPOcMwqQAOoi0VAIMLAEWJ6YYC1c8ibj1GP51RqwzYwZVMHQuvOzMCBUtb2tGHx5NAdLKqp5AX7Ng4d+Zi8AGDI9z1ijx9yaCH04y3GCP2S+QcvaGl+pcxyUBvinFlawoDQjHSelX8hQEoIrAq8p/mgC88HOS1YCl/BRgAmiD/1gn6Nu8AAAAASUVORK5CYII=) no-repeat left center;
 }
+/* validateLineSortedReset */
 /* border */
 .swggUiContainer input,
 .swggUiContainer pre,
@@ -252,52 +273,46 @@ pre {
 .swggUiContainer textarea {
     border: 1px solid #999;
 }
-.swggUiContainer .resource:first-child {
-    border-top: 1px solid #777;
-}
-.swggUiContainer .styleBorderBottom1px {
+.swggUiContainer .borderBottom1Px {
     border-bottom: 1px solid #777;
 }
+.swggUiContainer .button {
+    border: 1px solid #35b;
+    border-radius: 5px;
+}
+.swggUiContainer .resource > .thead > .td2 {
+    border-left: 1px solid #037;
+}
+/* validateLineSortedReset */
 /* color */
 .swggUiContainer a,
-.swggUiContainer .label,
-.swggUiContainer .resource > .thead > .td {
+.swggUiContainer .button,
+.swggUiContainer .operation > .thead,
+.swggUiContainer .resource > .thead {
+    color: #35b;
+}
+.swggUiContainer code {
+    color: #333;
+}
+.swggUiContainer .color777 {
+    color: #777;
+}
+.swggUiContainer .label {
     color: #373;
-}
-.swggUiContainer button,
-.swggUiContainer .operation > .thead > .td2,
-.swggUiContainer .resourceDescription,
-.swggUiContainer > .thead > .td1,
-.swggUiContainer > .thead > .td4,
-.swggUiContainer > .thead > .td5 {
-    color: #fff;
-}
-.swggUiContainer .errorMessage {
-    color: #c00;
 }
 .swggUiContainer .multilinePlaceholderPre {
     color: #999;
 }
-.swggUiContainer .resourceDescription a {
-    color: #7d7;
-}
-.swggUiContainer .resourceDescription strong {
-    color: #7f7;
-}
-.swggUiContainer .resourceDescription > code {
-    color: #ddf;
-}
-.swggUiContainer .styleColor777 {
-    color: #777;
-}
-/* display */
-.swggUiContainer .onEventResourceDisplayAction {
-    display: inline-block;
+.swggUiContainer .operation > .thead > .td2,
+.swggUiContainer .resource > .thead,
+.swggUiContainer > .thead > .td1 {
+    color: #fff;
 }
 .swggUiContainer .thead,
 .swggUiContainer .tr {
     display: flex;
 }
+/* validateLineSortedReset */
 /* flex */
 .swggUiContainer .operation > .thead > .td3 {
     flex: 1;
@@ -332,51 +347,52 @@ pre {
 .swggUiContainer > .thead > .td3 {
     flex: 1;
 }
+/* validateLineSortedReset */
 /* margin */
-.swggUiContainer {
-    margin: 0 auto;
+.swggUiContainer li {
+    margin-bottom: 10px;
 }
-.swggUiContainer audio,
-.swggUiContainer img,
-.swggUiContainer option,
-.swggUiContainer video,
-.swggUiContainer .operation .thead,
-.swggUiContainer .responseBody,
-.swggUiContainer .responseMedia,
-.swggUiContainer .td,
-.swggUiContainer .td .onEventResourceDisplayAction {
-    margin-bottom: 0;
-}
-.swggUiContainer ul,
-.swggUiContainer .operation > .thead > .td1,
-.swggUiContainer .td {
+.swggUiContainer ol,
+.swggUiContainer ul {
     margin-left: 20px;
+}
+.swggUiContainer .description,
+.swggUiContainer .operation,
+.swggUiContainer .resource,
+.swggUiContainer > div,
+.swggUiContainer > ol,
+.swggUiContainer > pre,
+.swggUiContainer > .info > div,
+.swggUiContainer > .info > .button,
+.swggUiContainer > .info > .hx {
+    margin-bottom: 20px;
 }
 .swggUiContainer .label {
     margin-bottom: 1px;
 }
-.swggUiContainer .markdown ol,
-.swggUiContainer .markdown ul {
-    margin-left: 20px;
+.swggUiContainer .operation:last-child {
+    margin-bottom: 0;
 }
-.swggUiContainer .onEventOperationAjax,
-.swggUiContainer .schemaP {
+.swggUiContainer .operation > form > div,
+.swggUiContainer .operation > form > pre {
     margin-bottom: 20px;
 }
-.swggUiContainer .operation button {
-    margin-bottom: 50px;
-    margin-top: 40px;
+.swggUiContainer .operation > form > .button {
+    margin: 50px 0;
 }
-.swggUiContainer .operation > .thead > .td4 {
-    margin-right: 20px;
-}
-.swggUiContainer .td:first-child {
+.swggUiContainer .resource > ol,
+.swggUiContainer .resource > .thead > .td,
+.swggUiContainer .td:first-child,
+.swggUiContainer > ol {
     margin-left: 0;
 }
+.swggUiContainer .td {
+    margin-left: 20px;
+}
+/* validateLineSortedReset */
 /* padding */
-.swggUiContainer button,
-.swggUiContainer > .thead {
-    padding: 10px;
+.swggUiContainer code {
+    padding: 2px;
 }
 .swggUiContainer input {
     padding: 0 5px;
@@ -385,46 +401,38 @@ pre {
 .swggUiContainer textarea {
     padding: 5px;
 }
-.swggUiContainer .operation > .content {
+.swggUiContainer .button,
+.swggUiContainer .resource > .thead > .td,
+.swggUiContainer > .thead {
+    padding: 10px 20px;
+}
+.swggUiContainer .description {
     padding: 20px;
+}
+.swggUiContainer .operation > form {
+    padding: 20px 20px 0 20px;
+}
+.swggUiContainer .operation > form .td1 {
+    padding-left: 0;
+}
+.swggUiContainer .operation > .thead {
+    padding: 0 20px;
 }
 .swggUiContainer .operation > .thead > .td {
     padding: 10px 0;
 }
-.swggUiContainer .operationDescription {
-    padding: 15px 10px 1px 10px;
-}
-.swggUiContainer .resource:first-child {
-    padding-top: 10px;
-}
-.swggUiContainer .resourceDescription {
-    padding: 20px 20px 10px 20px;
-}
 .swggUiContainer > .thead > .td1 {
     padding-left: 40px;
-    padding-top: 6px;
+    padding-top: 4px;
 }
-
-
-
-/* hover */
-.swggUiContainer a:hover,
-.swggUiContainer > .thead > .td1:hover {
-    color: #33d;
+/* validateLineSortedReset */
+/* .textOverflowEllipsis */
+.swggUiContainer .textOverflowEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-.swggUiContainer button:hover {
-    background: #33d;
-}
-.swggUiContainer .operation > .thead:hover,
-.swggUiContainer .resource > .thead > .td:hover {
-    background: #bbf;
-}
-.swggUiContainer .resourceDescription a:hover {
-    color: #7f7;
-}
-
-
-
+/* validateLineSortedReset */
 /* @media */
 @media screen and (max-width: 640px) {
     .swggUiContainer .operation {
@@ -443,58 +451,64 @@ pre {
         width: 100%;
     }
 }
-
-
-
-/* textOverflowElipsis */
-.swggUiContainer .operation > .thead > .td4,
-.swggUiContainer .resource > .thead > .td1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+/* validateLineSortedReset */
+/* hover */
+.swggUiContainer a:hover,
+.swggUiContainer .resource > .thead > .td:hover,
+.swggUiContainer > .thead > .td1:hover {
+    color: #037;
 }
-
-
-
-/* .hasError */
-.swggUiContainer button.hasError {
-    background: #c00;
+.swggUiContainer .button:hover,
+.swggUiContainer .operation > .thead:hover {
+    background: #bbf;
+}
+/* validateLineSortedReset */
+/* error */
+.swggUiContainer button.hasError,
+.swggUiContainer pre.hasError,
+.swggUiContainer textarea.hasError {
+    background: #fbb;
 }
 .swggUiContainer input.hasError,
 .swggUiContainer select.hasError {
     border: 5px solid #c00;
 }
-.swggUiContainer pre.hasError,
-.swggUiContainer textarea.hasError {
-    background: #fdd;
+.swggUiContainer .errorMessage {
+    color: #c00;
 }
 </style>
 </head>
-<body>
+<body style="background: #ddf; font-family: Arial, Helvetica, sans-serif; margin: 0 40px;">
 <div id="ajaxProgressDiv1" style="background: transparent; height: 2px; left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;"></div>
 <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;"></div>
+<code style="display: none;"></code><div class="button uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel" style="display: none;"></div><pre style="display: none;"></pre><textarea readonly="" style="display: none;"></textarea>
 <script></script>
-<div class="swggUiContainer"><!-- <div class="swggUiContainer"> -->
-<div class="eventDelegateKeyup eventDelegateSubmit onEventUiReload thead">
+<div class="swggUiContainer" style="margin: 0 auto; max-width: 1200px;"><!-- <div class="swggUiContainer"> -->
+<h2 class="eventDelegateKeyup eventDelegateSubmit hx onEventUiReload thead">
     <a class="td td1" href="https://github.com/kaizhu256/node-swgg" target="_blank">swgg</a>
     <input class="td td2" placeholder="http://petstore.swagger.io/v2/swagger.json" type="text" value="http://127.0.0.1:8081/assets.swgg.swagger.json">
     <input class="td td3" id="swggApiKeyInput1" placeholder="api-key" type="text" value="">
-    <button class="eventDelegateClick onEventUiReload td td4">explore</button>
-    <button class="eventDelegateClick onEventUiReload td td5" id="swggApiKeyClearButton1">clear api-keys</button>
-</div>
+    <button class="button eventDelegateClick onEventUiReload td td4">explore</button>
+    <button class="button eventDelegateClick onEventUiReload td td5" id="swggApiKeyClearButton1">
+        clear api-keys
+    </button>
+</h2>
 <div class="errorMessage" id="swggUiReloadErrorDiv1" style="background: none; border: 0;"></div>
 <div class="info reset">
     
+    <h2 class="hx">
+        <a href="https://github.com/kaizhu256/node-swgg-github-gists" target="_blank">swgg-github-gists (2018.3.28)</a>
+    </h2>
     
-    <a href="https://github.com/kaizhu256/node-swgg-github-gists" target="_blank"><h2>swgg-github-gists (2018.2.12)</h2></a>
     
-    
-    <div class="markdown"><p>this zero-dependency package will provide a swagger-client for github-gists's web-apis, with a working web-demo</p>
+    <div class="markdown"><p>this zero-dependency package will provide a (nodejs-compatible) swagger-client for github-gists's web-apis, with a working web-demo</p>
 </div>
     
     
-    <h4><a download="" href="https://kaizhu256.github.io/node-swgg-github-gists/build..beta..travis-ci.org/app/assets.app.js">download standalone app</a></h4>
     
+    <a class="button" download="" href="https://kaizhu256.github.io/node-swgg-github-gists/build..beta..travis-ci.org/app/assets.app.js">
+        download standalone app
+    </a><br>
     
     <ul>
         
@@ -504,39 +518,39 @@ pre {
         
         
     </ul>
-    
 </div>
 
-<h4 class="label">javascript code</h4>
+<h4 class="label">nodejs initialization</h4>
 <pre id="swggAjaxProgressPre1">/*
- * initialize swgg-client
+ * initialize nodejs swgg-client
  * 1. download currently-loaded apis to file swagger.json:
- *     $ curl -L "http://127.0.0.1:8081/assets.swgg.swagger.json" &gt; swagger.json
+ *     $ curl -L -o swagger.json "http://127.0.0.1:8081/assets.swgg.swagger.json"
  * 2. npm install swgg
  *     $ npm install swgg
- * 3. run code below to initialize swgg-client
+ * 3. run code below to initialize nodejs swgg-client
  * 4. (optional) edit file swagger.json to suit your needs
  */
 var swgg;
 swgg = require("swgg");
 swgg.apiUpdate(require("./swagger.json"));
 console.log("printing currently loaded apis ...");
-console.log(JSON.stringify(Object.keys(swgg.apiDict).sort(), null, 4));
-console.log("initialized swgg-client");
+Object.keys(swgg.apiDict).sort().forEach(function (key) {
+    console.log("swgg.apiDict[" + JSON.stringify(key) + "].ajax");
+});
+console.log("initialized nodejs swgg-client");
 </pre>
-<div class="reset styleColor777">[ <span>base url</span>: / ]</div>
+<div class="color777 reset">[ <span>base url</span>: / ]</div>
 
 <div id="swggAjaxProgressDiv1" style="text-align: center; display: none;">
     <span>rendering swagger.json</span>
     <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: inline-block; height: 25px; vertical-align: middle; width: 25px;"></div>
 </div>
-<div class="reset resourceList"><div class="styleBorderBottom1px resource
-        eventDelegateChange eventDelegateClick eventDelegateKeyup eventDelegateSubmit
+<ol class="reset resourceList" style="list-style-type: upper-roman;"><li class="
+        eventDelegateChange eventDelegateClick eventDelegateKeyup eventDelegateSubmit resource
     " data-name="github-gists" id="swgg_id_github_gists_1">
 <h3 class="thead">
-    <span class="onEventResourceDisplayAction td td1" tabindex="0">
-        <div class="onEventResourceDisplayAction resourceIi">I.</div>github-gists:
-        <span class="onEventResourceDisplayAction resourceSummary"># [Gists]()
+    <span class="onEventResourceDisplayAction td td1 textOverflowEllipsis" tabindex="0">
+        github-gists:&nbsp;&nbsp;# [Gists]()
 
 **Note:** To help with migrating from our REST API v3 to GraphQL API v4, we're introducing a preview period to include the [GraphQL ```node_id```]() in the response for many REST API v3 resources. See the [blog post]() for full details. To access ```node_id``` during the preview period, you must provide a custom [media type]() in the ```Accept``` header:
 ```
@@ -565,12 +579,14 @@ application/vnd.github.VERSION.raw+json
 application/vnd.github.VERSION.text+json
 application/vnd.github.VERSION.html+json
 application/vnd.github.VERSION.full+json
-```</span>
+```
     </span>
-    <span class="onEventResourceDisplayAction td td2" style="border-left: 1px solid #000; margin: 0; padding-left: 20px;" tabindex="0">expand / collapse operations</span>
+    <span class="onEventResourceDisplayAction td td2" tabindex="0">
+    expand / collapse operations
+    </span>
 </h3>
-<div class="operationList uiAnimateSlide" style="max-height: 100%;">
-    <div class="markdown resourceDescription"><h1 id="-gists-https-developer-github-com-v3-gists-"><a href="https://developer.github.com/v3/gists/">Gists</a></h1>
+<ol class="operationList uiAnimateSlide" style="max-height: 100%;">
+    <div class="description markdown"><h1 id="-gists-https-developer-github-com-v3-gists-"><a href="https://developer.github.com/v3/gists/">Gists</a></h1>
 <p><strong>Note:</strong> To help with migrating from our REST API v3 to GraphQL API v4, we're introducing a preview period to include the <a href="https://developer.github.com/v3/#graphql-global-relay-ids">GraphQL <code>node_id</code></a> in the response for many REST API v3 resources. See the <a href="https://developer.github.com/changes/2017-12-19-graphql-node-id">blog post</a> for full details. To access <code>node_id</code> during the preview period, you must provide a custom <a href="https://developer.github.com/v3/media">media type</a> in the <code>Accept</code> header:</p>
 <pre><code>application/vnd.github.jean-grey-preview+json
 </code></pre><p><strong>Warning:</strong> The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact <a href="https://github.com/contact">GitHub support</a>.</p>
@@ -588,22 +604,24 @@ application/vnd.github.VERSION.html+json
 application/vnd.github.VERSION.full+json
 </code></pre></div>
 <div class="operation" data-_method-path="POST /gists/{}/comments" id="swgg_id__2Fgists_2F_7Bgist_id_7D_2Fcomments_20POST_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">1.</span>
     <span class="methodPOST td td2">POST</span>
-    <span class="td td3">/gists/{gist_id}/comments</span>
-    <span class="styleColor777 td td4">[Gist Comments]() - Create a comment</span>
+    <span class="td td3">
+        /gists/{gist_id}/comments
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gist Comments]() - Create a comment</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="max-height: 100%;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="max-height: 100%;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/comments/#create-a-comment">Gist Comments</a> - Create a comment</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/comments/#create-a-comment">Gist Comments</a> - Create a comment</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -616,7 +634,7 @@ application/vnd.github.VERSION.full+json
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -643,7 +661,7 @@ application/vnd.github.VERSION.full+json
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -670,7 +688,7 @@ application/vnd.github.VERSION.full+json
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -711,7 +729,7 @@ application/vnd.github.VERSION.full+json
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -737,7 +755,7 @@ application/vnd.github.VERSION.full+json
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><strong>Required</strong>. The comment text.</p>
+    <span class="color777 markdown"><p><strong>Required</strong>. The comment text.</p>
 </span>
     
 </span>
@@ -770,7 +788,7 @@ application/vnd.github.VERSION.full+json
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -781,11 +799,11 @@ application/vnd.github.VERSION.full+json
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript">/*
  * reproduce api-call "POST /gists/{}/comments"
- * 1. initialize swgg-client from previous step
+ * 1. initialize nodejs swgg-client from previous step
  * 2. run code below to reproduce api-call
  */
 swgg.apiDict["POST /gists/{}/comments"].ajax({
@@ -823,22 +841,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="DELETE /gists/{}/comments/{}" id="swgg_id__2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20DELETE_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">2.</span>
     <span class="methodDELETE td td2">DELETE</span>
-    <span class="td td3">/gists/{gist_id}/comments/{id}</span>
-    <span class="styleColor777 td td4">[Gist Comments]() - Delete a comment</span>
+    <span class="td td3">
+        /gists/{gist_id}/comments/{id}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gist Comments]() - Delete a comment</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/comments/#delete-a-comment">Gist Comments</a> - Delete a comment</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/comments/#delete-a-comment">Gist Comments</a> - Delete a comment</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -851,7 +871,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -878,7 +898,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -905,7 +925,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -946,7 +966,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -972,7 +992,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -994,7 +1014,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -1005,8 +1025,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -1020,22 +1040,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="PATCH /gists/{}/comments/{}" id="swgg_id__2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20PATCH_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">3.</span>
     <span class="methodPATCH td td2">PATCH</span>
-    <span class="td td3">/gists/{gist_id}/comments/{id}</span>
-    <span class="styleColor777 td td4">[Gist Comments]() - Edit a comment</span>
+    <span class="td td3">
+        /gists/{gist_id}/comments/{id}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gist Comments]() - Edit a comment</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/comments/#edit-a-comment">Gist Comments</a> - Edit a comment</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/comments/#edit-a-comment">Gist Comments</a> - Edit a comment</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -1048,7 +1070,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -1075,7 +1097,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -1102,7 +1124,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -1143,7 +1165,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1169,7 +1191,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1195,7 +1217,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><strong>Required</strong>. The comment text.</p>
+    <span class="color777 markdown"><p><strong>Required</strong>. The comment text.</p>
 </span>
     
 </span>
@@ -1228,7 +1250,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -1239,8 +1261,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -1254,22 +1276,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}/comments/{}" id="swgg_id__2Fgists_2F_7Bgist_id_7D_2Fcomments_2F_7Bid_7D_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">4.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{gist_id}/comments/{id}</span>
-    <span class="styleColor777 td td4">[Gist Comments]() - Get a single comment</span>
+    <span class="td td3">
+        /gists/{gist_id}/comments/{id}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gist Comments]() - Get a single comment</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/comments/#get-a-single-comment">Gist Comments</a> - Get a single comment</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/comments/#get-a-single-comment">Gist Comments</a> - Get a single comment</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -1282,7 +1306,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -1309,7 +1333,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -1336,7 +1360,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -1377,7 +1401,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1403,7 +1427,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1425,7 +1449,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -1436,8 +1460,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -1451,22 +1475,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}/comments" id="swgg_id__2Fgists_2F_7Bgist_id_7D_2Fcomments_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">5.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{gist_id}/comments</span>
-    <span class="styleColor777 td td4">[Gist Comments]() - List comments on a gist</span>
+    <span class="td td3">
+        /gists/{gist_id}/comments
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gist Comments]() - List comments on a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist">Gist Comments</a> - List comments on a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist">Gist Comments</a> - List comments on a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -1479,7 +1505,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -1506,7 +1532,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -1533,7 +1559,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -1574,7 +1600,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1596,7 +1622,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -1607,8 +1633,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -1622,22 +1648,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}/star" id="swgg_id__2Fgists_2F_7Bid_7D_2Fstar_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">6.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{id}/star</span>
-    <span class="styleColor777 td td4">[Gists]() - Check if a gist is starred</span>
+    <span class="td td3">
+        /gists/{id}/star
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Check if a gist is starred</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#check-if-a-gist-is-starred">Gists</a> - Check if a gist is starred</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#check-if-a-gist-is-starred">Gists</a> - Check if a gist is starred</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -1650,7 +1678,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -1677,7 +1705,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -1701,10 +1729,10 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <div class="schemaP tr" id="swgg_id_accept_36" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -1716,9 +1744,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_41" selected="">&lt;none&gt;</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_37">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_37" selected="">application/vnd.github.jean-grey-preview+json</option>
         
         <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_38">application/vnd.github.v3.raw</option>
         
@@ -1743,7 +1769,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1765,7 +1791,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -1776,8 +1802,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -1791,22 +1817,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="POST /gists" id="swgg_id__2Fgists_20POST_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">7.</span>
     <span class="methodPOST td td2">POST</span>
-    <span class="td td3">/gists</span>
-    <span class="styleColor777 td td4">[Gists]() - Create a gist</span>
+    <span class="td td3">
+        /gists
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Create a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#create-a-gist">Gists</a> - Create a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#create-a-gist">Gists</a> - Create a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -1819,7 +1847,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -1846,7 +1874,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -1867,13 +1895,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_42" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_41" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -1885,15 +1913,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_47" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_42" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_43">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_43">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_44">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_44">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_45">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_46">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_45">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -1912,7 +1938,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -1974,7 +2000,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -1985,8 +2011,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -2000,22 +2026,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="DELETE /gists/{}" id="swgg_id__2Fgists_2F_7Bid_7D_20DELETE_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">8.</span>
     <span class="methodDELETE td td2">DELETE</span>
-    <span class="td td3">/gists/{id}</span>
-    <span class="styleColor777 td td4">[Gists]() - Delete a gist</span>
+    <span class="td td3">
+        /gists/{id}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Delete a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#delete-a-gist">Gists</a> - Delete a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#delete-a-gist">Gists</a> - Delete a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -2028,7 +2056,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -2055,7 +2083,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -2076,13 +2104,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_48" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_46" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -2094,15 +2122,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_53" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_47" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_49">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_48">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_50">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_49">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_51">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_52">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_50">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -2121,7 +2147,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2143,7 +2169,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -2154,8 +2180,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -2169,22 +2195,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="PATCH /gists/{}" id="swgg_id__2Fgists_2F_7Bid_7D_20PATCH_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">9.</span>
     <span class="methodPATCH td td2">PATCH</span>
-    <span class="td td3">/gists/{id}</span>
-    <span class="styleColor777 td td4">[Gists]() - Edit a gist</span>
+    <span class="td td3">
+        /gists/{id}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Edit a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#edit-a-gist">Gists</a> - Edit a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#edit-a-gist">Gists</a> - Edit a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -2197,7 +2225,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -2224,7 +2252,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -2245,13 +2273,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_54" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_51" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -2263,15 +2291,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_59" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_52" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_55">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_53">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_56">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_54">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_57">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_58">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_55">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -2290,7 +2316,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2316,7 +2342,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2325,7 +2351,9 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <div class="multilinePlaceholderContainer">
         <pre class="multilinePlaceholderPre">{
+    "content": "abcd1234",
     "description": "the description for this gist",
+    "filename": "abcd1234",
     "files": {
         "delete_this_file.txt": "abcd1234",
         "file1.txt": {
@@ -2350,12 +2378,26 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
 <span class="td td4">
     <pre>{
+    "content": {
+        "description": "Updated file contents.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "Updated file contents."
+        ]
+    },
     "description": {
         "default": "the description for this gist",
         "description": "A description of the gist.",
         "type": "string",
         "x-swgg-descriptionLineList": [
             "A description of the gist."
+        ]
+    },
+    "filename": {
+        "description": "New name for this file.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "New name for this file."
         ]
     },
     "files": {
@@ -2397,7 +2439,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -2408,8 +2450,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -2423,22 +2465,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="POST /gists/{}/forks" id="swgg_id__2Fgists_2F_7Bid_7D_2Fforks_20POST_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">10.</span>
     <span class="methodPOST td td2">POST</span>
-    <span class="td td3">/gists/{id}/forks</span>
-    <span class="styleColor777 td td4">[Gists]() - Fork a gist</span>
+    <span class="td td3">
+        /gists/{id}/forks
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Fork a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#fork-a-gist">Gists</a> - Fork a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#fork-a-gist">Gists</a> - Fork a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -2451,7 +2495,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -2478,7 +2522,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -2499,13 +2543,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_60" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_56" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -2517,15 +2561,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_65" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_57" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_61">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_58">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_62">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_59">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_63">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_64">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_60">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -2544,7 +2586,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2566,7 +2608,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -2577,8 +2619,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -2592,22 +2634,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}" id="swgg_id__2Fgists_2F_7Bid_7D_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">11.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{id}</span>
-    <span class="styleColor777 td td4">[Gists]() - Get a single gist</span>
+    <span class="td td3">
+        /gists/{id}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Get a single gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#get-a-single-gist">Gists</a> - Get a single gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#get-a-single-gist">Gists</a> - Get a single gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -2620,7 +2664,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -2647,7 +2691,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -2668,13 +2712,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_66" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_61" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -2686,15 +2730,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_71" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_62" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_67">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_63">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_68">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_64">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_69">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_70">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_65">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -2713,7 +2755,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2735,7 +2777,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -2746,8 +2788,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -2761,22 +2803,24 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}/{}" id="swgg_id__2Fgists_2F_7Bid_7D_2F_7Bsha_7D_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">12.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{id}/{sha}</span>
-    <span class="styleColor777 td td4">[Gists]() - Get a specific revision of a gist</span>
+    <span class="td td3">
+        /gists/{id}/{sha}
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Get a specific revision of a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist">Gists</a> - Get a specific revision of a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist">Gists</a> - Get a specific revision of a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -2789,7 +2833,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -2816,7 +2860,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -2837,13 +2881,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_72" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_66" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -2855,15 +2899,13 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_77" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_67" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_73">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_68">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_74">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_69">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_75">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_76">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_70">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -2882,7 +2924,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2908,7 +2950,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -2930,7 +2972,7 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -2941,8 +2983,8 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -2956,25 +2998,27 @@ swgg.apiDict["POST /gists/{}/comments"].ajax({
 </form>
 </div>
 <div class="operation" data-_method-path="GET /users/{}/gists" id="swgg_id__2Fusers_2F_7Busername_7D_2Fgists_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">13.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/users/{username}/gists</span>
-    <span class="styleColor777 td td4">[Gists]() - List a user's gists
+    <span class="td td3">
+        /users/{username}/gists
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - List a user's gists
 
 List public gists for the specified user:</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#list-a-users-gists">Gists</a> - List a user's gists</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#list-a-users-gists">Gists</a> - List a user's gists</p>
 <p>List public gists for the specified user:</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -2987,7 +3031,7 @@ List public gists for the specified user:</span>
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -3014,7 +3058,7 @@ List public gists for the specified user:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -3035,13 +3079,13 @@ List public gists for the specified user:</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_78" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_71" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -3053,15 +3097,13 @@ List public gists for the specified user:</span>
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_83" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_72" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_79">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_73">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_80">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_74">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_81">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_82">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_75">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -3080,7 +3122,7 @@ List public gists for the specified user:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -3106,7 +3148,7 @@ List public gists for the specified user:</span>
     
     
     <br>
-    <span class="markdown styleColor777"><p>A timestamp in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only gists updated at or after this time are returned.</p>
+    <span class="color777 markdown"><p>A timestamp in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only gists updated at or after this time are returned.</p>
 </span>
     
 </span>
@@ -3128,7 +3170,7 @@ List public gists for the specified user:</span>
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -3139,8 +3181,8 @@ List public gists for the specified user:</span>
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -3154,28 +3196,30 @@ List public gists for the specified user:</span>
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/public" id="swgg_id__2Fgists_2Fpublic_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">14.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/public</span>
-    <span class="styleColor777 td td4">[Gists]() - List all public gists
+    <span class="td td3">
+        /gists/public
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - List all public gists
 
 List all public gists sorted by most recently updated to least recently updated.
 
 Note: With [pagination](), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#list-all-public-gists">Gists</a> - List all public gists</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#list-all-public-gists">Gists</a> - List all public gists</p>
 <p>List all public gists sorted by most recently updated to least recently updated.</p>
 <p>Note: With <a href="https://developer.github.com/v3/#pagination">pagination</a>, you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -3188,7 +3232,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -3215,7 +3259,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -3236,13 +3280,13 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_84" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_76" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -3254,15 +3298,13 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_89" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_77" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_85">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_78">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_86">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_79">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_87">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_88">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_80">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -3281,7 +3323,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <br>
-    <span class="markdown styleColor777"><p>A timestamp in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only gists updated at or after this time are returned.</p>
+    <span class="color777 markdown"><p>A timestamp in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only gists updated at or after this time are returned.</p>
 </span>
     
 </span>
@@ -3303,7 +3345,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -3314,8 +3356,8 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -3329,22 +3371,24 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}/commits" id="swgg_id__2Fgists_2F_7Bid_7D_2Fcommits_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">15.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{id}/commits</span>
-    <span class="styleColor777 td td4">[Gists]() - List gist commits</span>
+    <span class="td td3">
+        /gists/{id}/commits
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - List gist commits</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#list-gist-commits">Gists</a> - List gist commits</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#list-gist-commits">Gists</a> - List gist commits</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -3357,7 +3401,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -3384,7 +3428,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -3405,13 +3449,13 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_90" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_81" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -3423,15 +3467,13 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_95" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_82" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_91">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_83">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_92">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_84">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_93">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_94">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_85">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -3450,7 +3492,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -3472,7 +3514,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -3483,8 +3525,8 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -3498,22 +3540,24 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/{}/forks" id="swgg_id__2Fgists_2F_7Bid_7D_2Fforks_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">16.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/{id}/forks</span>
-    <span class="styleColor777 td td4">[Gists]() - List gist forks</span>
+    <span class="td td3">
+        /gists/{id}/forks
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - List gist forks</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#list-gist-forks">Gists</a> - List gist forks</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#list-gist-forks">Gists</a> - List gist forks</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -3526,7 +3570,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -3553,7 +3597,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -3574,13 +3618,13 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_96" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_86" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -3592,15 +3636,13 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_101" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_87" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_97">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_88">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_98">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_89">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_99">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_100">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_90">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -3619,7 +3661,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -3641,7 +3683,7 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -3652,8 +3694,8 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -3667,25 +3709,27 @@ Note: With [pagination](), you can fetch up to 3000 gists. For example, you can 
 </form>
 </div>
 <div class="operation" data-_method-path="GET /gists/starred" id="swgg_id__2Fgists_2Fstarred_20GET_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">17.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/gists/starred</span>
-    <span class="styleColor777 td td4">[Gists]() - List starred gists
+    <span class="td td3">
+        /gists/starred
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - List starred gists
 
 List the authenticated user's starred gists:</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#list-starred-gists">Gists</a> - List starred gists</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#list-starred-gists">Gists</a> - List starred gists</p>
 <p>List the authenticated user's starred gists:</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -3698,7 +3742,7 @@ List the authenticated user's starred gists:</span>
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -3725,7 +3769,7 @@ List the authenticated user's starred gists:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -3746,13 +3790,13 @@ List the authenticated user's starred gists:</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_102" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_91" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -3764,15 +3808,13 @@ List the authenticated user's starred gists:</span>
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_107" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_92" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_103">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_93">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_104">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_94">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_105">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_106">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_95">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -3791,7 +3833,7 @@ List the authenticated user's starred gists:</span>
     
     
     <br>
-    <span class="markdown styleColor777"><p>A timestamp in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only gists updated at or after this time are returned.</p>
+    <span class="color777 markdown"><p>A timestamp in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only gists updated at or after this time are returned.</p>
 </span>
     
 </span>
@@ -3813,7 +3855,7 @@ List the authenticated user's starred gists:</span>
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -3824,8 +3866,8 @@ List the authenticated user's starred gists:</span>
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -3839,22 +3881,24 @@ List the authenticated user's starred gists:</span>
 </form>
 </div>
 <div class="operation" data-_method-path="PUT /gists/{}/star" id="swgg_id__2Fgists_2F_7Bid_7D_2Fstar_20PUT_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">18.</span>
     <span class="methodPUT td td2">PUT</span>
-    <span class="td td3">/gists/{id}/star</span>
-    <span class="styleColor777 td td4">[Gists]() - Star a gist</span>
+    <span class="td td3">
+        /gists/{id}/star
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Star a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#star-a-gist">Gists</a> - Star a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#star-a-gist">Gists</a> - Star a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -3867,7 +3911,7 @@ List the authenticated user's starred gists:</span>
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -3894,7 +3938,7 @@ List the authenticated user's starred gists:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -3915,13 +3959,13 @@ List the authenticated user's starred gists:</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_108" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_96" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -3933,15 +3977,13 @@ List the authenticated user's starred gists:</span>
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_113" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_97" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_109">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_98">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_110">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_99">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_111">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_112">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_100">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -3960,7 +4002,7 @@ List the authenticated user's starred gists:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -3982,7 +4024,7 @@ List the authenticated user's starred gists:</span>
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -3993,8 +4035,8 @@ List the authenticated user's starred gists:</span>
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -4008,22 +4050,24 @@ List the authenticated user's starred gists:</span>
 </form>
 </div>
 <div class="operation" data-_method-path="DELETE /gists/{}/star" id="swgg_id__2Fgists_2F_7Bid_7D_2Fstar_20DELETE_1">
-<div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
+<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">19.</span>
     <span class="methodDELETE td td2">DELETE</span>
-    <span class="td td3">/gists/{id}/star</span>
-    <span class="styleColor777 td td4">[Gists]() - Unstar a gist</span>
+    <span class="td td3">
+        /gists/{id}/star
+    </span>
+    <span class="color777 td td4 textOverflowEllipsis">[Gists]() - Unstar a gist</span>
 </div>
-<form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
+<form accept-charset="UTF-8" class="uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="markdown operationDescription">
-    <p><a href="https://developer.github.com/v3/gists/#unstar-a-gist">Gists</a> - Unstar a gist</p>
+    <div class="description markdown">
+        <p><a href="https://developer.github.com/v3/gists/#unstar-a-gist">Gists</a> - Unstar a gist</p>
 
     </div>
     
     <h4 class="label">parameters</h4>
-    <div class="schemaP styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaP thead">
         <span class="td td1">name and description</span>
         <span class="td td2">data type</span>
         <span class="td td3">value</span>
@@ -4036,7 +4080,7 @@ List the authenticated user's starred gists:</span>
     
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
 <p>OAuth2 token (sent as a parameter)</p>
 </span>
     
@@ -4063,7 +4107,7 @@ List the authenticated user's starred gists:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
 <p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
 </span>
     
@@ -4084,13 +4128,13 @@ List the authenticated user's starred gists:</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_114" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_101" data-name="accept">
 <span class="td td1">
     accept
-    
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+    <span class="color777 markdown"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
 <p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
 </span>
     
@@ -4102,15 +4146,13 @@ List the authenticated user's starred gists:</span>
     
     <select class="input" multiple="">
         
-        <option data-value-select-option="%22%24swggUndefined%22" id="swgg_id_accept_119" selected="">&lt;none&gt;</option>
+        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_102" selected="">application/vnd.github.jean-grey-preview+json</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.jean-grey-preview%2Bjson%22" id="swgg_id_accept_115">application/vnd.github.jean-grey-preview+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_103">application/vnd.github.v3.raw</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.raw%22" id="swgg_id_accept_116">application/vnd.github.v3.raw</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_104">application/vnd.github.v3.base64</option>
         
-        <option data-value-select-option="%22application%2Fvnd.github.v3.base64%22" id="swgg_id_accept_117">application/vnd.github.v3.base64</option>
-        
-        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_118">application/vnd.github.v3+json</option>
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_105">application/vnd.github.v3+json</option>
         
     </select>
     
@@ -4129,7 +4171,7 @@ List the authenticated user's starred gists:</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="markdown styleColor777"><p>no description</p>
+    <span class="color777 markdown"><p>no description</p>
 </span>
     
 </span>
@@ -4151,7 +4193,7 @@ List the authenticated user's starred gists:</span>
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
+    <div class="borderBottom1Px color777 schemaResponse thead">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
@@ -4162,8 +4204,8 @@ List the authenticated user's starred gists:</span>
 </span>
     </div>
     
-    <button class="onEventOperationAjax">try it out!</button>
-    <h4 class="label">javascript code</h4>
+    <button class="button onEventOperationAjax">try it out!</button>
+    <h4 class="label">nodejs request</h4>
     <pre class="requestJavascript"></pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl"></pre>
@@ -4176,9 +4218,9 @@ List the authenticated user's starred gists:</span>
     <div class="responseMedia"></div>
 </form>
 </div>
-</div>
-</div>
-</div>
+</ol>
+</li>
+</ol>
 <div class="utility2FooterDiv">
     [ this document was created with
     <a href="https://github.com/kaizhu256/node-swgg" target="_blank">swgg</a>
